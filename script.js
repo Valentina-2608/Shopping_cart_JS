@@ -54,11 +54,14 @@ basket_count.innerHTML=count_items.innerHTML+' ';
 text_items.innerHTML='items';
 }
 
+
+
 /* Update info_cart, count Total Price */
 
 let quantity_fields=document.querySelectorAll('.number');
 for (let i=0; i< quantity_fields.length; i++){
 quantity_fields[i].addEventListener('change', updateTotalPrice);
+grandTotal();
 }
 function updateTotalPrice(event){
 number=event.target;
@@ -67,16 +70,26 @@ price_field=number_parent.getElementsByClassName('numberPrice')[0].innerHTML;
 total_price_field=number_parent.getElementsByClassName('numberTotalPrice')[0];
 price_field_number=price_field.substring(0,price_field.length-1);
 total_price_field.innerHTML=+price_field_number*number.value+'Є';
-
-	
-
+grandTotal();
 if (isNaN(number.value) || number.value <= 0){
 	number.value = 1;
 }
 }
 
 
+/* Addition price to basket */
+function grandTotal(){
+let grand_total_price=document.querySelectorAll('.total_price')[0];
 
+let total_price_fields=document.querySelectorAll('.numberTotalPrice');
+let suma=0;
+for(let i=0; i< total_price_fields.length; i++){
+	let total_price_field_string=total_price_fields[i].innerHTML;
+	price_field_number=+total_price_field_string.substring(0,total_price_field_string.length-1);	
+	suma+=price_field_number;
+}
+grand_total_price.innerHTML=suma + 'Є';
+}
 
 
 
@@ -95,7 +108,7 @@ remove_btn=event.target;
 remove_btn.grandparent=remove_btn.parentElement.parentElement;
 remove_btn.grandparent.remove();
 let info_products_length=document.querySelectorAll('.info_product').length;
-
+grandTotal();
 
 /* Change count of items in basket */
 count_items.innerHTML=info_products_length;
