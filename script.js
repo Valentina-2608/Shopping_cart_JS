@@ -54,8 +54,26 @@ basket_count.innerHTML=count_items.innerHTML+' ';
 text_items.innerHTML='items';
 }
 
+/* Update info_cart, count Total Price */
 
+let quantity_fields=document.querySelectorAll('.number');
+for (let i=0; i< quantity_fields.length; i++){
+quantity_fields[i].addEventListener('change', updateTotalPrice);
+}
+function updateTotalPrice(event){
+number=event.target;
+number_parent=number.parentElement.parentElement;
+price_field=number_parent.getElementsByClassName('numberPrice')[0].innerHTML;
+total_price_field=number_parent.getElementsByClassName('numberTotalPrice')[0];
+price_field_number=price_field.substring(0,price_field.length-1);
+total_price_field.innerHTML=+price_field_number*number.value+'Є';
 
+	
+
+if (isNaN(number.value) || number.value <= 0){
+	number.value = 1;
+}
+}
 
 
 
@@ -77,7 +95,7 @@ remove_btn=event.target;
 remove_btn.grandparent=remove_btn.parentElement.parentElement;
 remove_btn.grandparent.remove();
 let info_products_length=document.querySelectorAll('.info_product').length;
-grandTotal();
+
 
 /* Change count of items in basket */
 count_items.innerHTML=info_products_length;
