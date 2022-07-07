@@ -170,7 +170,7 @@ box-shadow:5px 5px 10px #2E4F79;
 position:absolute;
 display:none;
 z-index:10;
-top:15%;
+top:18%;
 left:34%;
 
 }
@@ -208,7 +208,7 @@ border-bottom:1px solid black;
 display:flex;
 justify-content:space-around;
 align-items:center;
-background-color:#8DA1BA;}
+background-color:#E8E8E8;}
 
 .itemCaption{width:25%;
 text-align:center;
