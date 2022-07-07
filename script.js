@@ -64,6 +64,41 @@ text_items.innerHTML='items';
 
 
 
+/* Remove item */
+
+
+let remove_btns=document.querySelectorAll('.remove_btn');
+for(let i=0; i< remove_btns.length; i++){
+remove_btns[i].addEventListener('click',removeItem);
+}
+
+function removeItem(event){
+remove_btn=event.target;
+remove_btn.grandparent=remove_btn.parentElement.parentElement;
+remove_btn.grandparent.remove();
+let info_products_length=document.querySelectorAll('.info_product').length;
+grandTotal();
+
+/* Change count of items in basket */
+count_items.innerHTML=info_products_length;
+basket_count.innerHTML=count_items.innerHTML;
+
+if (count_items.innerHTML==0 ||  count_items.innerHTML==1){
+text_items.innerHTML=' '+'item';
+}
+else if (count_items.innerHTML>1){
+basket_count.innerHTML=count_items.innerHTML+' ';
+text_items.innerHTML='items';
+}
+}
+
+
+
+
+
+
+
+
 
 
 
