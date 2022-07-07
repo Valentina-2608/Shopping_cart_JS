@@ -36,6 +36,39 @@ info_product.innerHTML=`<div class="itemCaption">${itemCaption}</div>
 
 basket_modal.appendChild(info_product);
 
+
+/* Add count of items in basket */
+let info_products_length=document.querySelectorAll('.info_product').length;
+
+let count_items=document.querySelector('.count_items');
+count_items.innerHTML=info_products_length;
+
+let basket_count=document.querySelector('.basket_count');
+basket_count.innerHTML=count_items.innerHTML;
+let text_items=document.querySelector('.text_items');
+if (count_items.innerHTML==0 || count_items.innerHTML==1){
+text_items.innerHTML=' '+'item';
+}
+else if (count_items.innerHTML>1){
+basket_count.innerHTML=count_items.innerHTML+' ';
+text_items.innerHTML='items';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
