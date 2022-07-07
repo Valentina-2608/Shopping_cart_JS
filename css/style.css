@@ -160,3 +160,107 @@ background-color:#EEEEEE;
 position:absolute;
 top:1850px;
 left:0px;}
+
+
+/* Basket modal */
+
+#basket_modal{width:60%;
+height:8%;
+box-shadow:5px 5px 10px gray;
+position:absolute;
+display:none;
+z-index:10;
+top:15%;
+left:34%;
+
+}
+
+.modal_show{
+animation: zoomIn 0.3s ease-in-out forwards; 	
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.basket_caption{width:100%;
+height:23px;
+padding-top:15px;
+padding-bottom:15px;
+text-align:center;
+background-color:#FFF7DB;
+font-size:20px;
+font-weight:bold;
+color:#590696;
+}
+
+.info_product{width:100%;
+height:100px;
+border-bottom:1px solid black;
+display:flex;
+justify-content:space-around;
+align-items:center;
+background-color:#EDE6D9;}
+
+.itemCaption{width:25%;
+text-align:center;
+font-weight:bold;
+color:darkred;}
+
+.itemPrice{width:20%;
+text-align:center;}
+
+.itemPrice span{font-weight:bold;}
+
+.itemQuantity{width:20%;}
+
+.itemTotalPrice{width:25%;
+font-weight:bold;}
+
+.itemImage{width:15%;
+text-align:center;}
+.itemImage img{width:50%;}
+
+.itemRemove{width:15%;}
+
+input[type="number"]{
+	width:30px;
+}
+
+.remove_btn{background-color:darkred;
+color:white;
+border-radius:10px;
+border:none;
+padding:8px;
+cursor:pointer;
+}
+
+.remove_btn:hover{cursor:pointer;}
+
+
+
+#total{width:97,5%;
+height:30px;
+background-color:#6B8A6F;
+padding:10px;
+font-size:20px;
+font-weight:bold;
+color:white;
+}
+
+
+
+
+
+
+
+
+
